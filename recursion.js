@@ -4,6 +4,7 @@
 //   return base * power(base, exponent - 1)
 
 // }
+
 // console.log('power', power(5, 3))
 
 // function factorial(num) {
@@ -53,7 +54,6 @@
 //   }
 //   return palindrome(str.slice(1, str.length - 1))
 // }
-
 
 // console.log('palindrome', palindrome('madams'))
 
@@ -171,33 +171,28 @@ let obj = {
     val: 4,
     info: {
       isRight: true,
-      random: 66
-    }
-  }
-}
+      random: 66,
+    },
+  },
+};
 
 function stringifyNumbers(obj) {
-  newObj = {}
+  newObj = {};
   for (const key in obj) {
-    if (typeof obj[key] === 'number') {
-      newObj[key] = obj[key].toString()
+    if (typeof obj[key] === "number") {
+      newObj[key] = obj[key].toString();
     }
-    if (typeof obj[key] === 'object' && !Array.isArray(obj[key])) {
-      let value = stringifyNumbers(obj[key])
-      newObj[key] = value
-
+    if (typeof obj[key] === "object" && !Array.isArray(obj[key])) {
+      let value = stringifyNumbers(obj[key]);
+      newObj[key] = value;
     } else {
-      newObj[key] = obj[key]
+      newObj[key] = obj[key];
     }
-
-
   }
-  return newObj
+  return newObj;
 }
 
-
-
-console.log('stringify', stringifyNumbers(obj))
+console.log("stringify", stringifyNumbers(obj));
 // const obj = {
 //   stuff: "foo",
 //   data: {
@@ -225,7 +220,6 @@ console.log('stringify', stringifyNumbers(obj))
 //       if (typeof obj[key] === 'string') {
 //         arr.push(obj[key])
 
-
 //       }
 //     }
 //   }
@@ -233,13 +227,11 @@ console.log('stringify', stringifyNumbers(obj))
 // }
 // console.log('stringify', collectStrings(obj))
 
+function doCheck(num) {
+  if (num === 1) return 0;
 
-
-function doCheck(num){
-  if(num === 1) return 0
-
-  doCheck(num - 1)
-  console.log('num',num)
+  doCheck(num - 1);
+  console.log("num", num);
 }
 
-console.log('doCheck',doCheck(3))
+console.log("doCheck", doCheck(3));
